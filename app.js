@@ -55,7 +55,7 @@ app.use(limiter);
 
 
 // Database Connection
-const DB = process.env.DATABASE;
+const DB = process.env.MONGODB_URI;
 mongoose
     .connect(DB)
     .then(() => console.log('Database Connected'))
