@@ -43,6 +43,7 @@ app.use(mongoSanitize());
 // Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/x-forwarded-for', (request, response) => response.send(request.headers['x-forwarded-for']))
 app.set('trust proxy', true);
 // Rate Limit
 const limiter = rateLimit({
