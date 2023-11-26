@@ -43,7 +43,7 @@ app.use(mongoSanitize());
 // Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.set('trust proxy', true);
 // Rate Limit
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
